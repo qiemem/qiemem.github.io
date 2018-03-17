@@ -1,0 +1,21 @@
+html
+  head
+    block scripts
+    -
+      var sites = {
+        About: 'index.html',
+        Projects: 'projects.html',
+        CV: 'cv.pdf'
+      };
+    title Bryan Head - #{title}
+    link(href='stylesheets/main.css', rel='stylesheet', type='text/css')
+  body
+    .banner
+    nav
+      ul
+        li
+          each url, name in sites
+            a(href=url)= name
+    .content
+      block content
+

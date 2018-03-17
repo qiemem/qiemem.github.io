@@ -1,0 +1,80 @@
+extends layout.pug
+
+block scripts
+  -
+    var maintain = [
+      {
+        name: 'NetLogo LevelSpace',
+        description: 'LevelSpace is an extension for NetLogo for multi-level agent-based modeling. It allows NetLogo models to open up and interact with other NetLogo models. This allows researchers to create a system of interacting models, each modeling particular aspects of their target system. This is the focus of my dissertation. Written in Scala.',
+        url: 'https://github.com/NetLogo/LevelSpace'
+      },
+      {
+        name: 'NetLogo Python extension',
+        description: 'The Python extension allows NetLogo to run Python code, allowing modelers to use sophisticated data analysis libraries like numpy, scipy, and TensorFlow in their NetLogo models. Written in Scala and Python.',
+        url: 'https://github.com/qiemem/PythonExtension',
+      },
+      {
+        name: 'NetLogo NW extension',
+        description: 'An extension for complex network analysis in NetLogo. It contains many toolssuch as centrality and clustering measurements, community detection algorithms, network generators, and so forth. Written in Scala.',
+        url: 'https://github.com/NetLogo/NW-Extension'
+      },
+      {
+        name: 'NetLgoo CSV extension',
+        description: 'A simple extension for parsing and writing CSV files in NetLogo. This allows models to easily incorporate common sources of data, and record their own data as they run. Written in Scala.',
+        url: 'https://github.com/NetLogo/CSV-Extension/'
+      },
+      {
+        name: 'NetLogo ControlFlow extension',
+        description: 'The ControlFlow extension has been a place for us to experiment with new control flow structures in NetLogo. Written in Scala.',
+        url: 'https://github.com/qiemem/ControlFlowExtension'
+      },
+      {
+        name: 'NetLogo BehaviorSpace Visualizer',
+        description: 'A data analyzis and visualization tool for NetLogo simulation data. Written in NetLogo.',
+        url: 'https://github.com/qiemem/BSV'
+      },
+      {
+        name: 'NetLogo Infinite topology extension',
+        description: 'An extension for creating NetLogo models with infinite worlds. Written in Scala.',
+        url: 'https://github.com/qiemem/inf-extension'
+      },
+      {
+        name: 'World Maker',
+        description: 'An educational game for learning programming in a 3D environment. Written in Javascript.',
+        url: 'https://github.com/qiemem/world-maker'
+      },
+      {
+        name: 'SandpileApp',
+        description: 'A simulator for the <a href="https://en.wikipedia.org/wiki/Abelian_sandpile_model">abelian sandpile model</a> on an arbitrary network. My 2009 GSoC project. Unfortunately, no longer actively maintained. Written in Java.',
+        url: 'http://people.reed.edu/~davidp/sand/program/program.html'
+      }
+    ];
+    var contribute = [
+      {
+        name: 'NetLogo',
+        description: 'One of the most widely used agent-based modeling platforms, intended for both researchers and educators. Written in Scala and Java.',
+        url: 'https://ccl.northwestern.edu/netlogo/'
+      },
+      {
+        name: 'NetLogoWeb',
+        description: 'A browser-based port of NetLogo. This was the first project I worked on in graduate school. Written in CoffeeScript and Scala.',
+        url: 'https://netlogoweb.org/'
+      }
+    ];
+
+
+block content
+  h3 Projects I maintain
+  ul.project-list
+    each project in maintain
+      li.project-item
+        a.project-link(href=project.url)= project.name
+        p!= project.description
+
+  h3 Projects I contribute to
+  ul.project-list
+    each project in contribute
+      li.project-item
+        a.project-link(href=project.url)= project.name
+        p!= project.description
+
